@@ -2,6 +2,7 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "engines": {
     "node": "14.x",
     "npm" : "6.x"
@@ -45,7 +46,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"npm install --prefix public src .gitignore package.json && npm run build --prefix public src .gitignore package.json  "
+    "heroku-postbuild":"npm install --prefix my-react-app && npm run build --prefix my-react-app  "
 
   },
   "eslintConfig": {
