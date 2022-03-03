@@ -41,12 +41,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"npm install --prefix my-react-app && npm run build --prefix my-react-app  "
 
   },
   "eslintConfig": {
