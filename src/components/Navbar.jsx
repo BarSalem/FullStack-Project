@@ -24,29 +24,27 @@ function NavBar(props){
 
     return (<div className="NavContainer">
     <div className="navRight">
-    {user ? <div className="NavItem"><Link to={'/content'} className="linkP vertical-center"><p>Videos</p></Link></div>:null}
-    <div className="NavItem"><Link to={'/recommendation'} className="linkP vertical-center"><p>Recommendation</p></Link></div>
-    <div className="NavItem"><Link to={'/about'} className="linkP vertical-center"><p>About</p></Link></div>
-    <div className="NavItem"><Link to={'/'} className="linkP vertical-center"><p>Home</p></Link></div>
+    {user ? <div className="NavItem"><Link to={'/content'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Videos</p></Link></div>:null}
+    <div className="NavItem"><Link to={'/recommendation'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Recommendation</p></Link></div>
+    <div className="NavItem"><Link to={'/about'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>About</p></Link></div>
+    <div className="NavItem"><Link to={'/'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Home</p></Link></div>
     </div>
     {user ?  <>
         <div className="navLeft">
-    <div className="NavItem nav1">
-    <div className="vertical-align">
-    <div className='navLeftBlocks special' onClick={onLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks special' onClick={onLogout}><p>Log Out</p></div>
-    </div>
+    <div className="NavItem">
+    <div className='navLeftBlocks' onClick={onLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks' onClick={onLogout}><p>Log Out</p></div>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faUser} size={"2x"} /></div><div className='navLeftBlocks '><Link to={'/acc'} className="linkP vertical-center"><p> Profile</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faUser} size={"2x"} /></div><div className='navLeftBlocks '><Link to={'/acc'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p> Profile</p></Link></div>
     </div>
     </div>
     </> : <>
     <div className="navLeft">
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center"><p>Log In</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Log In</p></Link></div>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center"><p>Register</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Register</p></Link></div>
     </div>
     </div>
     </>}
