@@ -1,0 +1,47 @@
+.RecComment{
+    display: inline-block;
+    height: 500px;
+    vertical-align: middle;
+}
+
+.RecBut{
+    background-color: #6bbe92;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 5px;
+    margin: auto 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+
+}
+
+.recDiv{
+    margin:225px 50px;
+}
+
+.h1Rec{
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.pRec{
+    line-height: 100%;
+}
+
+.pDiv{
+    width: 80%;
+    border-style: dotted;
+    margin-bottom: 100px;
+}
+
+#one {
+    border:solid 5px white;
+    border-radius: 255px 50px 255px 50px/50px 225px 50px 255px;
+    padding: 10px 50px;
+  }
+
+  .carsProp{
+      width: 80%;
+  }

@@ -1,0 +1,51 @@
+.navRight{
+    float:right;
+    margin-top: 0;
+    height: inherit;
+}
+
+.navLeft{
+    float: left;
+    margin-top: 0;
+    height: inherit;
+}
+
+.NavContainer{
+    height: 74px;
+    width: 100%;
+    background-color: #6bbe92;
+}
+
+.NavItem{
+    position: relative;
+    display: inline-block;
+    padding-right: 8px;
+    padding-left: 8px;
+    height: 100%;
+    margin: auto 0;
+}
+
+.NavItem:hover{
+    background-color: #3CBA77;
+    cursor: pointer;
+}
+
+.navLeftBlocks{
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    
+}
+
+.linkP{
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    vertical-align: middle;
+    height: 74px;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+  }

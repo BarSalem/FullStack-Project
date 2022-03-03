@@ -1,0 +1,157 @@
+
+body {
+    font: normal 14px/100% "Rubik", AndaleMono, monospace;
+    color: #fff;
+    background-color: #374954;
+    margin:0;
+  }
+a:hover{
+  color:white;
+}
+
+a{
+  vertical-align: middle;
+}
+
+  .setButton {
+    background-color: #6bbe92;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 5px;
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  .setButton:hover{
+    background-color: #3CBA77;
+    cursor: pointer;
+  }
+  h1{
+    font-size: 40px;   
+    }
+
+  p{
+      font-size: 30px;
+      vertical-align: middle;
+  }
+
+  hr{
+    border: 0;
+    width: 80%;
+    border-top: 15px dotted #6bbe92;
+    margin:50px auto;
+    }
+
+  .vidContent{
+    width:70%;
+    float:left;
+    text-align: right;
+  }
+
+  .inDivContent{
+    padding-right: 20px;
+  }
+
+  .vid{
+    width:30%;
+    float:right;
+  }
+  
+  .vidInTable{
+    margin-top:50px;
+  }
+
+  .vidSubject{
+    font-size: 3.5em;
+    color: white;
+    text-align: right;
+
+  }
+
+  .subjectDiv{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+
+  .LikeBut{
+    background-color: #6bbe92;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 5px;
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .LikeDiv{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .LikeCounter{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #lengthSize{
+    font-size: 25px;
+  }
+
+  .floatLeftTitle{
+    float:left;
+  }
+
+  .socGen{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    outline-offset: -1px;
+    text-align: center;
+    float: right;
+    transition: width .15s ease-in-out;
+    overflow: hidden;
+    z-index: 100030;
+    cursor: pointer;
+    border:0;
+  }
+
+  #socialFB{
+    background-color: #2f55a4 ;
+  }
+
+  #socialTwit{
+    background-color: #1DA1F2;
+  }
+
+  #socialInst{
+    background-color: #bc2a8d;
+  }
+
+  #socialMail{
+    background-color: #FF3E30;
+  }
+
+  #socialSup{
+    background-color: #25D366;
+  }
+
+  .socGen:hover{
+    width: 70px;
+  }
+  .socialLinks{
+    position: fixed;
+    top: 300px;
+    right: 0;
+    }
+
+  .socColor{
+    color: white;
+  }
+
