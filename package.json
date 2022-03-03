@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm" : "6.x"
     },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
@@ -44,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"ng build --prod"
+    "heroku-postbuild":"npm install --prefix public src .gitignore package.json && npm run build --prefix public src .gitignore package.json  "
 
   },
   "eslintConfig": {
