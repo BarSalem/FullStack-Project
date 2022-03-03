@@ -18,6 +18,4 @@ if(process.env.NODE_ENV==='production'){
     app.get('*',(req,res)=> res.sendFile(path.resolve(__dirname,'./','build','index.html')))
 }
 
-app.listen(5000,function(){
-    console.log("Server is on");
-});
+app.listen(process.env.PORT || 3000);
