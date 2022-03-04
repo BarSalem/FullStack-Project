@@ -11,7 +11,7 @@
 }
 
 .NavContainer{
-    height: 74px;
+    height: 55px;
     width: 100%;
     background-color: #6bbe92;
 }
@@ -25,6 +25,17 @@
     margin: auto 0;
 }
 
+.NavItem1{
+    position: relative;
+    display: inline-block;
+    padding-right: 8px;
+    padding-left: 8px;
+    height: 60px;
+    padding-top:8px;
+    padding-bottom:8px;
+    margin: 0;
+}
+
 .NavItem:hover{
     background-color: #3CBA77;
     cursor: pointer;
@@ -34,7 +45,6 @@
     display: inline-block;
     padding-right: 5px;
     padding-left: 5px;
-    
 }
 
 .linkP{
@@ -42,7 +52,7 @@
     color: #fff;
     margin: 0;
     vertical-align: middle;
-    height: 74px;
+    height: 60px;
 }
 
 .vertical-center {

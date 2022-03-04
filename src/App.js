@@ -13,11 +13,11 @@ import Register from "./components/Register"
 import Footer from "./components/footer";
 import Profile from "./components/Account";
 
-function App(props) {
+function App() {
   return (
     <>
       <Router >
-        <Navbar loggedin={props.isLogged} name={props.name} />
+        <Navbar />
         <Socials />
         <Routes>
           <Route path='/' element={<Home />} ></Route>

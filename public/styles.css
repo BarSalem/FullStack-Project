@@ -36,7 +36,7 @@ a{
     }
 
   p{
-      font-size: 30px;
+      font-size: 20px;
       vertical-align: middle;
   }
 
@@ -157,3 +157,15 @@ a{
     color: white;
   }
 
+  .buttonFix{
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  button:focus{
+    color: white;
+  }
+
+  a:focus{
+    color: white;
+  }

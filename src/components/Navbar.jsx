@@ -1,7 +1,5 @@
 import React from "react";
 import './css/Navbar.css';
-import LoginNav from "./NavbarLeftLoggedIn";
-import LogoutNav from "./NavbarLeftLoggedOut"
 import {Link,useNavigate} from "react-router-dom";
 import {useSelector} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -32,7 +30,9 @@ function NavBar(props){
     {user ?  <>
         <div className="navLeft">
     <div className="NavItem">
+    <div className="NavItem1">
     <div className='navLeftBlocks' onClick={onLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks' onClick={onLogout}><p>Log Out</p></div>
+    </div>
     </div>
     <div className="NavItem">
     <div className='navLeftBlocks'><FontAwesomeIcon icon={faUser} size={"2x"} /></div><div className='navLeftBlocks '><Link to={'/acc'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p> Profile</p></Link></div>

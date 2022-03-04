@@ -1,6 +1,5 @@
 import React,{useEffect} from "react";
 import Videos from "./renderVideos"
-import Socials from "./sideLinks"
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux'
 
@@ -35,13 +34,14 @@ function Content(){
   return (
     <div className="App">
     <center>
+    <div className="buttonFix">
       <button className="setButton" onClick={renderSet} value={0}>Set1</button>
       <button className="setButton" onClick={renderSet} value={1}>Set2</button>
       <button className="setButton" onClick={renderSet} value={2}>Set3</button>
       <button className="setButton" onClick={renderSet} value={3}>Set4</button>
       <button className="setButton" onClick={renderSet} value={4}>Set5</button>
+      </div>
       </center>
-      <Socials />
       { isShown ? <Videos setNumber={setN}/> : null }
 
     </div>
