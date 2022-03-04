@@ -43,6 +43,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
+    "build":"react-scripts build",
     "client": "npm start --prefix my-react-app",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm run build"
