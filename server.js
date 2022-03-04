@@ -9,12 +9,11 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-
 //serve frontend
 app.use(express.static(path.join(__dirname,'./build')))
-app.get('/*',(req,res)=> res.sendFile(path.resolve(__dirname,'./','build','index.html')))
-
-app.listen(process.env.PORT || 3000);
-
+app.get('*',(req,res)=> res.sendFile(path.resolve(__dirname,'./','build','index.html')))
 app.use('/vid', require('./Routes/mainRoute'));
 app.use('/user',require('./Routes/userRoutes'));
+
+
+app.listen(process.env.PORT || 3000);
