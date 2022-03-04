@@ -45,7 +45,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix my-react-app",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "my-react-app && npm install --only=dev && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -67,5 +67,6 @@
   },
   "devDependencies": {
     "concurrently": "^7.0.0"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }
