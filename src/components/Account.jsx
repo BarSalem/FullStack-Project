@@ -1,37 +1,42 @@
 import React from "react";
+import {useSelector} from 'react-redux';
 import "./css/Account.css";
 
-function Profile(props){
-    const [edit,setEdit]=React.setstate(1);
-    /*function handleEdit(){
-        if(edit===0){
-            setEdit(1);
-        }
-        else{
-            setEdit(0);
-        }
+function Profile(){
+    const [edit,setEdit]=React.useState(true)
+    const { user } = useSelector((state) => state.auth)
+    const [formData,setFormData]=React.useState({
+      password:'',
+      password2:''
+    })
+    const {password,password2}=formData;
+    const onChange= (e)=>{
+      setFormData((prevState)=>({
+        ...prevState,
+        [e.target.name]:e.target.value
+      }))
+    }
+    /*const onSubmit=(e)=>{
+      e.preventDefault()
+      if(password!==password2){
+        toast.error('Passwords do not match')
+      }
+      else{
+        user
+        dispatch(register(userData));
+      }
     }*/
-
     return (<div>
     <h1>Your Account info</h1>
-    <p>Full Name:{props.name}</p>
-    {edit ? 
-        <div class="input-container ic1">
-      <input id="email" class="inputLogin" type="email" placeholder="Email" required/>
-      <div class="cut cut-short"></div>
-    </div> : null }
-    <p>Email:{props.email}</p>
-    {edit ? 
-        <div class="input-container ic1">
-      <input id="email" class="inputLogin" type="email" placeholder="Email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required/>
-      <div class="cut cut-short"></div>
-    </div> : null }
-    <p>Password:{props.password}</p>
-    {edit ? 
-        <div class="input-container ic1">
-      <input id="email" class="inputLogin" type="email" placeholder="Email" required/>
-      <div class="cut cut-short"></div>
-    </div> : null }
+    <p>Name : {user.name} </p>
+    <p>Email : {user.email}</p>
+    <p>password is hashed</p>
+    {edit ? <p>hi</p>:<p>hello</p>}
+    <label>New Password:</label>
+    <input class="inputRegister" type="password" name='password' value={password} onChange={onChange} placeholder="Password" required />
+    <label>Repeat Password:</label>
+    <input class="inputRegister" type="password" name='password2' value={password2} onChange={onChange} placeholder="Password" required />
+    <button onClick={()=>setEdit(!edit)} className="setButton">Edit</button>
     </div>);
 }
 

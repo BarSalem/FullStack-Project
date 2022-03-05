@@ -4,6 +4,7 @@ import Content from "./videoContent"
 import Subject from "./VideoSub"
 import Like from "./Like"
 import "mathjs"
+import {Row,Col} from 'react-bootstrap';
 
 function Video(props){
     const [duration,setDuration]=React.useState("")
@@ -28,7 +29,9 @@ function Video(props){
                 }
             }
         }
-    return(<div><div className="vid">
+    return(<div className="row">
+    <Row >
+    <Col><div className="vid">
     <ReactPlayer
             url={props.src}
             width='450px'
@@ -37,6 +40,7 @@ function Video(props){
             onDuration={(i) => calcDur(i)}
             />
     </div>
+    </Col>
     <div className="inDivContent">
     <div className="vidContent">
     <div className="floatLeftTitle">
@@ -49,12 +53,13 @@ function Video(props){
     </div>
     <div className="floatRightTitle">
     <div className="subjectDiv">
-    <Subject subject={props.subject} />
+    <Col><Subject subject={props.subject} /></Col>
     </div> 
     </div>
-    <Content content={props.content} />
+    <Col><Content content={props.content} /></Col>
     </div>
     </div>
+    </Row>
     </div>)
 }
 

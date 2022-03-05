@@ -169,3 +169,14 @@ a{
   a:focus{
     color: white;
   }
+
+  
+@media (max-width:1028px){
+  h1{
+    font-size: 20px;
+  }
+  p{
+    font-size: 15px;
+  }
+
+}
