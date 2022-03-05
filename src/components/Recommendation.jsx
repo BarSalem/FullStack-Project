@@ -5,35 +5,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 function Recommendation(){
-    function mod(n, m) {
-        return ((n % m) + m) % m;
-      }
-        const [i,setI]=React.useState(0);
-        const [Img,setImg]=React.useState(Images[0]);
-        function nextPhoto(){
-            setI((i+1)%(Images.length));
-            setImg(Images[i]);
-            console.log(i);
-            }
-        function prevPhoto(){
-            if(i===0){
-                setI(Images.length-1);
-                setImg(Images[i]);
-                console.log(i);
-            }
-            else{
-                setI(mod(i-1,Images.length));
-                setImg(Images[i]);
-                console.log(i);
-            }
-        }
-
         function renderCarouselItem(image){
           return <div>
           <img
             className="d-block w-100"
             src={image.src}
-            style={{'height':"600px" , 'width':'80%'}}
+            style={{'height':"600px"}}
             alt="First slide"
           />
         </div>

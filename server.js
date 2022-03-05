@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname,'./build')))
 app.get('*',(req,res)=> res.sendFile(path.resolve(__dirname,'./','build','index.html')))
 app.use('/vid', require('./Routes/mainRoute'));
 app.use('/user',require('./Routes/userRoutes'));
+app.use('/acc',require('./Routes/updateInfoRoute'));
 
 
 app.listen(process.env.PORT || 3000 , ()=>{

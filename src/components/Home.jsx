@@ -21,7 +21,7 @@ function Home(){
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+    emailjs.sendForm('service_om4q85c', 'template_sbldq04', form.current, 'lU80KI3A1yfBRwhb4')
       .then((result) => {
           console.log(result.text);
           navigate('/');

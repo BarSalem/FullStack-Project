@@ -26,17 +26,20 @@ function Profile(){
         dispatch(register(userData));
       }
     }*/
-    return (<div>
-    <h1>Your Account info</h1>
-    <p>Name : {user.name} </p>
-    <p>Email : {user.email}</p>
-    <p>password is hashed</p>
-    {edit ? <p>hi</p>:<p>hello</p>}
-    <label>New Password:</label>
-    <input class="inputRegister" type="password" name='password' value={password} onChange={onChange} placeholder="Password" required />
-    <label>Repeat Password:</label>
-    <input class="inputRegister" type="password" name='password2' value={password2} onChange={onChange} placeholder="Password" required />
+    return (<div><center>
+    <h1 id="editH1">This is your Account info {user.name}</h1>
+    <p className="editP">You can change your password by clicking on the edit button</p>
+    <p className="editP">Your Email : {user.email}</p>
+    <p className="editP">password is unvisible</p>
+    {edit ? <> <form autoComplete="new-password">
+      <label>New Password:</label>
+    <input class="inputRegister inputEdit" type="password" name='password' value={password} onChange={onChange} placeholder="Password" autoComplete="none" required />
+    <br /><label>Repeat Password:</label>
+    <input class="inputRegister inputEdit" type="password" name='password2' value={password2} onChange={onChange} placeholder="Password" autoComplete="none" required />
+    <br /><button type="submit" className="setButton">Save</button>
+    </form></>: null}
     <button onClick={()=>setEdit(!edit)} className="setButton">Edit</button>
+    </center>
     </div>);
 }
 

@@ -45,3 +45,14 @@
   .carsProp{
       width: 80%;
   }
+  @media (max-width:1028px){
+    h1{
+      font-size: 20px;
+    }
+    p{
+      font-size: 15px;
+    }
+    .d-block{
+        height: 150px;
+    }
+  }
