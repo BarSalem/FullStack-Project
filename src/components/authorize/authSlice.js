@@ -32,14 +32,14 @@ export const login = createAsyncThunk('auth/login',async (user,thunkAPI)=> {
     }
 } )
 
-export const updatePass = createAsyncThunk('auth/updatepass',async (user,thunkAPI)=> {
+/*export const updatePass = createAsyncThunk('auth/updatepass',async (user,thunkAPI)=> {
     try {
         return await authService.updatePass(user);
     } catch (error) {
         const message=((error.response && error.response.data && error.response.data.message)||error.message|| error.toString())
         return thunkAPI.rejectWithValue(message)
     }
-} )
+} )*/
 
 
 // logout
