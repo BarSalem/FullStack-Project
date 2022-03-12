@@ -8,7 +8,7 @@ import {login,reset} from './authorize/authSlice';
 import Spinner from "./Spinner";
 
 function Login(){
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = React.useState({
     email: '',
     password: '',
   })
