@@ -8,46 +8,54 @@ import {login,reset} from './authorize/authSlice';
 import Spinner from "./Spinner";
 
 function Login(){
-  const [formData,setFormData]=React.useState({
-    name:'',
-    email:'',
-    password:'',
-    password2:''
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
   })
-  const {email,password}=formData;
 
-  const navigate=useNavigate();
-    const dispatch=useDispatch();
+  const { email, password } = formData
 
-    const {user,isLoading,isError,isSuccess,message}=useSelector((state)=>state.auth);
-    React.useEffect(()=>{
-      if(isError){
-        toast.error(message)
-      }
-      if(isSuccess||user){
-        navigate('/')
-      }
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-      dispatch(reset());
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
 
-    },[user,isError,isSuccess,message,navigate,dispatch])
+  React.useEffect(() => {
+    if (isError) {
+      toast.error(message)
+    }
 
-  const onChange= (e)=>{
-    setFormData((prevState)=>({
+    if (isSuccess || user) {
+      navigate('/')
+    }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
-  if(isLoading){
-    return <Spinner />
-  }
-  const onSubmit=(e)=>{
+
+  const onSubmit = (e) => {
     e.preventDefault()
-    const userData={
-      email,password
+
+    const userData = {
+      email,
+      password,
     }
+
     dispatch(login(userData))
   }
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
     return (<form onSubmit={onSubmit}>
     <div id="LoginForm">
     <div class="Loginform">
