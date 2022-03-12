@@ -9,11 +9,10 @@ function Profile(){
     const [edit,setEdit]=React.useState(true)
     const {user,isLoading,isError,isSuccess,message}=useSelector((state)=>state.auth);
     const [formData,setFormData]=React.useState({
-      email:user.email,
       password:'',
       password2:''
     })
-    const {email,password,password2}=formData;
+    const {password,password2}=formData;
     /*const navigate=useNavigate();
     const dispatch=useDispatch()*/
     
@@ -47,7 +46,7 @@ function Profile(){
     <p className="editP">You can change your password by clicking on the edit button</p>
     <p className="editP">Your Email : {user.email}</p>
     <p className="editP">password is unvisible</p>
-    {edit ? <> <form autoComplete="new-password" onSubmit={onSubmit}>
+    {edit ? <> <form autoComplete="new-password">
       <label>Email:</label>
       <input  class="inputRegister inputEdit" readonly type="email" name='email' value={user.email} onChange={onChange} placeholder="Email" required/>
       <label>New Password:</label>
