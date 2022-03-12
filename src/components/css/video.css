@@ -1,0 +1,75 @@
+.type_10{
+    border: 0;
+    width: 80%;
+    border-top: 15px dotted #6bbe92;
+    margin:50px auto;
+    }
+
+  .vidContent{
+    width:70%;
+    float:left;
+    text-align: right;
+  }
+
+  .inDivContent{
+    padding-right: 20px;
+  }
+  #pContent{
+    margin:20px 30px;
+  }
+  .vid{
+    width:30%;
+    float:right;
+  }
+  .vidSubject{
+    margin-right: 30px;
+  }
+  .vidInTable{
+    margin-top:50px;
+  }
+
+  .vidSubject{
+    font-size: 3.5em;
+    color: white;
+    text-align: right;
+
+  }
+
+  .subjectDiv{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 1028px){
+    .vid{
+      width:100% !important;
+      margin:auto 30px;
+    }
+    .vidSubject{
+      font-size: 3.5em;
+      color: white;
+      text-align: right;
+      margin: 25px auto;
+    }
+    .floatRightTitle{
+      width: 100%;
+    }
+    .vidTitle{
+      width: 100%;
+    }
+    #pContent{
+      text-align: right;
+    }
+    .vidContent{
+      width: 100%;
+    }
+    .vidDetails{
+      text-align: center;
+      margin: 0 70px;
+    }
+    .subjectDiv{
+      margin-top:50px;
+      margin-right:100px ;
+    }
+  }

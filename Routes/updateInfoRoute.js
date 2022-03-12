@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
-const {updatePassword}=require('../controllers/userController');
+const {updatePass}=require('../controllers/userController');
 
-router.post('/',updatePassword);
+router.post('/',updatePass);
 
 module.exports=router;

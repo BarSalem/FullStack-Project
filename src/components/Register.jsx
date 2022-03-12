@@ -61,7 +61,7 @@ function Register(){
     <div class="Registertitle">Welcome</div>
     <div class="Registersubtitle">Let's create your account!</div>
     <div class="input-container ic1">
-      <input id="email" class="inputRegister" type="text" name='name' value={name} onChange={onChange} placeholder="Name" required/>
+      <input id="name" class="inputRegister" type="text" name='name' value={name} onChange={onChange} placeholder="Name" required/>
       <div class="cut cut-short"></div>
     </div>
     <div class="input-container ic2">
@@ -69,11 +69,11 @@ function Register(){
       <div class="cut cut-short"></div>
     </div>
     <div class="input-container ic2">
-      <input id="firstname" class="inputRegister" type="password" name='password' value={password} onChange={onChange} placeholder="Password" required />
+      <input id="password" class="inputRegister" type="password" name='password' value={password} onChange={onChange} placeholder="Password" required />
       <div class="cut"></div>
     </div>
     <div class="input-container ic2">
-      <input id="firstname" class="inputRegister" type="password" name='password2' value={password2} onChange={onChange} placeholder="Re-Password" required />
+      <input id="password2" class="inputRegister" type="password" name='password2' value={password2} onChange={onChange} placeholder="Re-Password" required />
       <div class="cut"></div>
     </div>
     <button type="submit" id="RegisterSubmit">submit</button>

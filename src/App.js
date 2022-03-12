@@ -12,12 +12,13 @@ import Content from "./components/content";
 import Register from "./components/Register"
 import Footer from "./components/footer";
 import Profile from "./components/Account";
+import TestNav from "./components/TestNav"
 
 function App() {
   return (
     <>
       <Router >
-        <Navbar />
+        <TestNav />
         <Socials />
         <Routes>
           <Route path='/' element={<Home />} ></Route>

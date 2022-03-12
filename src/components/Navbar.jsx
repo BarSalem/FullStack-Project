@@ -6,9 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket, faSquareArrowUpRight,faUser} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch} from 'react-redux';
 import {logout,reset} from "./authorize/authSlice";
+//import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
-function NavBar(props){
+function NavBar(){
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { user } = useSelector((state) => state.auth)
@@ -35,16 +36,16 @@ function NavBar(props){
     </div>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faUser} size={"2x"} /></div><div className='navLeftBlocks '><Link to={'/acc'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p> Profile</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faUser} size={"2x"} /></div><div className='navLeftBlocks '><Link to={'/acc'} className="linkP vertical-center"><p> Profile</p></Link></div>
     </div>
     </div>
     </> : <>
     <div className="navLeft">
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Log In</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center"><p>Log In</p></Link></div>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Register</p></Link></div>
+    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center"><p>Register</p></Link></div>
     </div>
     </div>
     </>}

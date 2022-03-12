@@ -14,16 +14,6 @@ a{
   vertical-align: middle;
 }
 
-@media (max-width:1028px){
-  h1{
-    font-size: 20px;
-  }
-  p{
-    font-size: 15px;
-  }
-
-}
-
   .setButton {
     background-color: #6bbe92;
     border: 0;
@@ -48,6 +38,7 @@ a{
   p{
       font-size: 20px;
       vertical-align: middle;
+      line-height: 1.6;
   }
 
   .type_10{
@@ -167,3 +158,29 @@ a{
     color: white;
   }
 
+  .buttonFix{
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  button:focus{
+    color: white;
+  }
+
+  a:focus{
+    color: white;
+  }
+
+  
+@media (max-width:1028px){
+  h1{
+    font-size: 20px;
+  }
+  p{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .vid{
+    width: 100%;
+  }
+}

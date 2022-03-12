@@ -1,10 +1,8 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ReactPlayer from 'react-player'
-import Content from "./videoContent"
-import Subject from "./VideoSub"
 import Like from "./Like"
 import "mathjs"
-import {Row,Col} from 'react-bootstrap';
+import "./css/video.css"
 
 function Video(props){
     const [duration,setDuration]=React.useState("")
@@ -29,37 +27,53 @@ function Video(props){
                 }
             }
         }
+    const [setWidth,setWidthFun]=React.useState(window.innerWidth>1028 ? "450px":"100%")
+    const [screenWidth, setScreenWidth] = React.useState(window.innerWidth)
+    useEffect(() => {
+
+            const changeWidth = () => {
+              setScreenWidth(window.innerWidth);
+              if(window.innerWidth>1028){
+                setWidthFun("450px")
+              }
+              else{
+                  setWidthFun("100%")
+              }
+            }
+        
+            window.addEventListener('resize', changeWidth)
+        
+            return () => {
+                window.removeEventListener('resize', changeWidth)
+            }
+        
+          }, [])
     return(<div className="row">
-    <Row >
-    <Col><div className="vid">
+    <div className="vid">
     <ReactPlayer
             url={props.src}
-            width='450px'
+            width={setWidth}
             height='320px'
             controls = {true}
             onDuration={(i) => calcDur(i)}
             />
     </div>
-    </Col>
-    <div className="inDivContent">
     <div className="vidContent">
+    <div className="vidTitle">
     <div className="floatLeftTitle">
     <div className="subjectDiv">
-    <Like count={props.count} />
+    {screenWidth>1028 ? <p id="lengthSize">length:   {duration}</p>:null}
+    </div>
     </div>
     <div className="subjectDiv">
-    <p id="lengthSize">length:   {duration}</p>
-    </div>
-    </div>
-    <div className="floatRightTitle">
-    <div className="subjectDiv">
-    <Col><Subject subject={props.subject} /></Col>
+    <h1 className="vidSubject">{props.subject}</h1>
     </div> 
     </div>
-    <Col><Content content={props.content} /></Col>
+    <div className="vidDetails">
+    <p id="pContent">{props.content}</p>
+    {screenWidth>1028 ? null:<p id="lengthSize">length:   {duration}</p>}
     </div>
     </div>
-    </Row>
     </div>)
 }
 

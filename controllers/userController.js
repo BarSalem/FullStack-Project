@@ -63,13 +63,14 @@ const loginUser=asyncHandler(async(req,res)=>{
     }
 })
 // user updatePassword /acc/put
-const updatePassword=asyncHandler(async(req,res)=>{
-    const {password,password2}=req.body;
+const updatePass=asyncHandler(async(req,res)=>{
+    const {email,password}=req.body;
     const user=await User.findOne({email});
     if(user){
+        console.log(user);
         const salt=await bcrypt.genSalt(10);
         const hasedPassword=await bcrypt.hash(password,salt);
-        const process = await User.findOneAndUpdate({email:email}, {password:hasedPassword});
+        const process = await User.findOneAndUpdate({email}, {password:hasedPassword});
         if(process){
             res.status(201).json({
                 _id:user.id,
@@ -85,7 +86,7 @@ const updatePassword=asyncHandler(async(req,res)=>{
 }
     else{
         res.status(400)
-        throw new Error("Invalid data");
+        throw new Error("Invalid data1");
     }
 })
 
@@ -100,5 +101,5 @@ module.exports={
     registerUser,
     getMe,
     loginUser,
-    updatePassword
+    updatePass
 }

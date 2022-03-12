@@ -38,6 +38,7 @@ a{
   p{
       font-size: 20px;
       vertical-align: middle;
+      line-height: 1.6;
   }
 
   .type_10{
@@ -177,6 +178,9 @@ a{
   }
   p{
     font-size: 15px;
+    line-height: 1.6;
   }
-
+  .vid{
+    width: 100%;
+  }
 }

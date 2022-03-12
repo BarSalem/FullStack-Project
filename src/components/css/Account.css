@@ -42,3 +42,8 @@
     font-size: 20px;
     margin-top: 50px;
   }
+
+  .editBut{
+    display: inline;
+    margin-top: 50px;
+  }
