@@ -63,7 +63,7 @@ const loginUser=asyncHandler(async(req,res)=>{
     }
 })
 // user updatePassword /acc/put
-const updatePass=asyncHandler(async(req,res)=>{
+/*const updatePass=asyncHandler(async(req,res)=>{
     const {email,password}=req.body;
     const user=await User.findOne({email});
     if(user){
@@ -89,7 +89,7 @@ const updatePass=asyncHandler(async(req,res)=>{
         throw new Error("Invalid data1");
     }
 })
-
+*/
 const generateToken=(id)=>{
     return jwt.sign({id},process.env.JWT_SECRET,{
         expiresIn:'30d'
@@ -101,5 +101,4 @@ module.exports={
     registerUser,
     getMe,
     loginUser,
-    updatePass
 }

@@ -13,12 +13,11 @@ function Profile(){
       password:'',
       password2:''
     })
-    console.log();
     const {email,password,password2}=formData;
-    const navigate=useNavigate();
-    const dispatch=useDispatch()
+    /*const navigate=useNavigate();
+    const dispatch=useDispatch()*/
     
-    React.useEffect(()=>{
+    /*React.useEffect(()=>{
       if(isError){
         toast.error(message)
       }
@@ -29,20 +28,20 @@ function Profile(){
       dispatch(reset());
 
     },[user,isError,isSuccess,message,navigate,dispatch])
-
+*/
     const onChange= (e)=>{
       setFormData((prevState)=>({
         ...prevState,
         [e.target.name]:e.target.value
       }))
     }
-    const onSubmit=(e)=>{
+    /*const onSubmit=(e)=>{
       e.preventDefault()
       const userData={
       email,password
     }
     dispatch(updatePass(userData))
-    }
+    }*/
     return (<div><center>
     <h1 id="editH1">This is your Account info {user.name}</h1>
     <p className="editP">You can change your password by clicking on the edit button</p>
