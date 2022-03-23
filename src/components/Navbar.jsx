@@ -42,10 +42,10 @@ function NavBar(){
     </> : <>
     <div className="navLeft">
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center"><p>Log In</p></Link></div>
+    <Link to={'/login'} className="linkP vertical-center"><p><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/>Log In</p></Link>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center"><p>Register</p></Link></div>
+    <Link to={'/register'} className="linkP vertical-center"><p><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} />Register</p></Link>
     </div>
     </div>
     </>}

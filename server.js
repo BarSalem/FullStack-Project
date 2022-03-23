@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'./build')))
 app.use('/vid', require('./Routes/mainRoute'));
 app.use('/user',require('./Routes/userRoutes'));
-//app.use('/acc',require('./Routes/updateInfoRoute'));
+app.use('/acc',require('./Routes/updateInfoRoute'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, './build')))

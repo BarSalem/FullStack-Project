@@ -63,13 +63,16 @@ const loginUser=asyncHandler(async(req,res)=>{
     }
 })
 // user updatePassword /acc/put
-/*const updatePass=asyncHandler(async(req,res)=>{
-    const {email,password}=req.body;
+const updatePass=asyncHandler(async(req,res)=>{
+    const {email,passworda,Nname}=req.body;
     const user=await User.findOne({email});
     if(user){
+        if(Nname){
+            await User.findOneAndUpdate({email}, {name:Nname});
+        }
         console.log(user);
         const salt=await bcrypt.genSalt(10);
-        const hasedPassword=await bcrypt.hash(password,salt);
+        const hasedPassword=await bcrypt.hash(passworda,salt);
         const process = await User.findOneAndUpdate({email}, {password:hasedPassword});
         if(process){
             res.status(201).json({
@@ -89,7 +92,7 @@ const loginUser=asyncHandler(async(req,res)=>{
         throw new Error("Invalid data1");
     }
 })
-*/
+
 const generateToken=(id)=>{
     return jwt.sign({id},process.env.JWT_SECRET,{
         expiresIn:'30d'
@@ -101,4 +104,5 @@ module.exports={
     registerUser,
     getMe,
     loginUser,
+    updatePass
 }

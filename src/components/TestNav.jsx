@@ -32,7 +32,9 @@ function NavBar(){
     }
 
   }, [])
-
+  function handleOnClick(){
+    setToggleMenu(false)
+  }
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { user } = useSelector((state) => state.auth)
@@ -40,6 +42,7 @@ function NavBar(){
     const onLogout = () => {
         dispatch(logout())
         dispatch(reset())
+        setToggleMenu(false)
         navigate('/')
       }
 
@@ -53,40 +56,40 @@ function NavBar(){
     <div className="NavItem"><Link to={'/'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Home</p></Link></div>
     </div>
     {user ?  <>
-        <div className="navLeft">
+    <div className="navLeft">
     <div className="NavItem" onClick={onLogout}>
-    <div className='navLeftBlocks' onClick={onLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks' onClick={onLogout}><p>Log Out</p></div>
+    <Link to={'/'} className="linkP vertical-center" ><p><FontAwesomeIcon icon={faArrowRightFromBracket}/>Log Out</p></Link>
     </div>
-    <div className="NavItem">
-    <Link to={'/acc'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size={"2x"} /><p> Profile</p></Link>
+    <div className="NavItem" >
+    <Link to={'/acc'} className="linkP vertical-center" ><p><FontAwesomeIcon icon={faUser}/> Profile</p></Link>
     </div>
     </div>
     </> : <>
     <div className="navLeft">
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/></div><div className='navLeftBlocks'><Link to={'/login'} className="linkP vertical-center"><p>Log In</p></Link></div>
+    <Link to={'/login'} className="linkP vertical-center"><p><FontAwesomeIcon icon={faArrowRightFromBracket} />Log In</p></Link>
     </div>
     <div className="NavItem">
-    <div className='navLeftBlocks'><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /></div><div className='navLeftBlocks'><Link to={'/register'} className="linkP vertical-center"><p>Register</p></Link></div>
+    <Link to={'/register'} className="linkP vertical-center"><p><FontAwesomeIcon icon={faSquareArrowUpRight} />Register</p></Link>
     </div>
     </div>
     </>}
     </>: <>
     <button onClick={toggleNav} className="toggleMenuBut"><FontAwesomeIcon icon={faBars} size={"3x"} /></button>
-      {toggleMenu ? <>
-    {user ? <div className="NavItem"><Link to={'/content'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Videos</p></Link></div>:null}
-    <div className="NavItem"><Link to={'/recommendation'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Recommendation</p></Link></div>
-    <div className="NavItem"><Link to={'/about'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>About</p></Link></div>
-    <div className="NavItem"><Link to={'/'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><p>Home</p></Link></div>
+    {toggleMenu ? <>
+    {user ? <div className="NavItem"><Link to={'/content'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p>Videos</p></Link></div>:null}
+    <div className="NavItem"><Link to={'/recommendation'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p>Recommendation</p></Link></div>
+    <div className="NavItem"><Link to={'/about'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p>About</p></Link></div>
+    <div className="NavItem"><Link to={'/'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p>Home</p></Link></div>
     {user ?  <>
-    <div className='NavItem NavItem1' onClick={onLogout}><div className="inlineLogout"><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/><p> Log Out</p></div></div>
-    <div className='NavItem'><Link to={'/acc'} className="linkP vertical-center" style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUser} size={"2x"} /><p> Profile</p></Link></div>
+    <div className='NavItem' onClick={onLogout}><div className="inlineLogout"><p><FontAwesomeIcon icon={faArrowRightFromBracket}/> Log Out</p></div></div>
+    <div className='NavItem'><Link to={'/acc'} className="linkP vertical-center" onClick={handleOnClick} style={{ textDecoration: 'none' }}><p><FontAwesomeIcon icon={faUser}/> Profile</p></Link></div>
     </> : <>
     <div className="NavItem">
-    <Link to={'/login'} className="linkP vertical-center"><FontAwesomeIcon icon={faArrowRightFromBracket} size={"2x"}/><p>Log In</p></Link>
+    <Link to={'/login'} className="linkP vertical-center" onClick={handleOnClick}><p><FontAwesomeIcon icon={faArrowRightFromBracket}/>   Log In</p></Link>
     </div>
     <div className="NavItem">
-    <Link to={'/register'} className="linkP vertical-center"><FontAwesomeIcon icon={faSquareArrowUpRight} size={"2x"} /><p> Register</p></Link>
+    <Link to={'/register'} className="linkP vertical-center" onClick={handleOnClick}><p><FontAwesomeIcon icon={faSquareArrowUpRight} /> Register</p></Link>
     </div>
     </>}
       </>: null}

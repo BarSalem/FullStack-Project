@@ -145,3 +145,7 @@
   .submitButCon{
     margin-top: 135px;
   }
+
+  .inputMessage{
+    resize:none;
+  }
