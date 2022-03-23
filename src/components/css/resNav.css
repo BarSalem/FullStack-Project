@@ -47,4 +47,7 @@
     .inlineLogout{
         display: inline-block;
     }
+    .isToggled{
+        z-index: 1;
+    }
 }

@@ -20,7 +20,7 @@ function Home(){
   const navigate=useNavigate()
   const sendEmail = (e) => {
     e.preventDefault();
-
+    navigate('/');
     emailjs.sendForm('service_om4q85c', 'template_sbldq04', form.current, 'lU80KI3A1yfBRwhb4')
       .then((result) => {
           console.log(result.text);

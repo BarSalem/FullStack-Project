@@ -4,7 +4,7 @@
 }
 
 .homeInfo {
-    margin-top:90px;
+    margin:50px auto;
     border:solid 5px white;
     border-radius: 255px 50px 255px 50px/50px 225px 50px 255px;
     padding: 10px 50px;
@@ -126,7 +126,7 @@
     height: 50px;
     margin-top: 38px;
     text-align: center;
-    width: 13%;
+    width: 170px;
   }
 
   .inputMessage{
@@ -148,4 +148,10 @@
 
   .inputMessage{
     resize:none;
+  }
+
+  @media (max-width:1028px){
+    .homeInfo {
+      margin-bottom: 60px;
+    }
   }

@@ -20,6 +20,7 @@
   .vid{
     width:30%;
     float:right;
+    z-index: -1;
   }
   .vidSubject{
     margin-right: 30px;
@@ -44,22 +45,24 @@
   @media screen and (max-width: 1028px){
     .vid{
       width:100% !important;
-      margin:auto 30px;
+      margin: 0px auto;
+      z-index: -1;
     }
     .vidSubject{
       font-size: 3.5em;
       color: white;
       text-align: right;
-      margin: 25px auto;
+      margin: 25px 5%;
     }
     .floatRightTitle{
       width: 100%;
     }
     .vidTitle{
-      width: 100%;
+      margin: 10px 70px;
     }
     #pContent{
       text-align: right;
+      margin-right: 0px;
     }
     .vidContent{
       width: 100%;
@@ -68,8 +71,7 @@
       text-align: center;
       margin: 0 70px;
     }
-    .subjectDiv{
-      margin-top:50px;
-      margin-right:100px ;
+    .row{
+      width: 100%;
     }
   }
