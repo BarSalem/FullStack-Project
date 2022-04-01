@@ -14,6 +14,14 @@ const userSchema=mongoose.Schema({
         type:String,
         required:[true,'Please add Password:']
     },
+    status: {
+        type: String, 
+        enum: ['Pending', 'Active'],
+        default: 'Pending'
+     },
+    confirmationCode: { 
+        type: String, 
+        unique: true },
     
 },
 {

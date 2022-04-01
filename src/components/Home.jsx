@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React,{useRef,useEffect} from "react";
 import "./css/Home.css";
 import emailjs from 'emailjs-com'
 import { useNavigate } from "react-router-dom";
@@ -24,10 +24,15 @@ function Home(){
     emailjs.sendForm('service_om4q85c', 'template_sbldq04', form.current, 'lU80KI3A1yfBRwhb4')
       .then((result) => {
           console.log(result.text);
-          navigate('/');
+          formData.email=''
+          formData.message=''
+          formData.name=''
+          alert("Your mail has been sent!")
+          navigate("/")
       }, (error) => {
           console.log(error.text);
-          navigate('/');
+          alert(error.text)
+          navigate("/")
       });
   };
     return(<div className="homeBody">

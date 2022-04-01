@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket, faSquareArrowUpRight,faUser} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch} from 'react-redux';
 import {logout,reset} from "./authorize/authSlice";
-//import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
 function NavBar(){

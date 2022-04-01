@@ -2,6 +2,7 @@ const jwt=require('jsonwebtoken');
 const bcrypt=require('bcryptjs');
 const asyncHandler=require('express-async-handler');
 const User=require('../DB/UserSch');
+const nodemailer=require('./nodeMailing')
 
 // route post /user
 const registerUser=asyncHandler(async(req,res)=>{
@@ -17,23 +18,33 @@ const registerUser=asyncHandler(async(req,res)=>{
     }
     const salt=await bcrypt.genSalt(10);
     const hasedPassword=await bcrypt.hash(password,salt);
-
+    const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let token = '';
+    for (let i = 0; i < 25; i++) {
+    token += characters[Math.floor(Math.random() * characters.length )];
+    }
     const user=await User.create({
-        name,email,password:hasedPassword
+        name,email,password:hasedPassword,confirmationCode: token
     })
-    if(user){
-        res.status(201).json({
-            _id:user.id,
-            name:user.name,
-            email:user.email,
-            token:generateToken(user._id)
-        })
-    }
-    else{
-        res.status(400)
-        throw new Error("Invalid data")
-    }
-    res.json({message:'Register User'})
+    user.save((err) => {
+        if (err) {
+          res.status(500).send({ message: err });
+               return;
+            }
+            res.json({
+                _id:user.id,
+                name:user.name,
+                email:user.email,
+                status:user.status,
+                token:generateToken(user._id)
+            })
+   
+          nodemailer.sendConfirmationEmail(
+             user.name,
+             user.email,
+             user.confirmationCode
+      );
+   });
 })
 
 //route get /user/me
@@ -54,6 +65,7 @@ const loginUser=asyncHandler(async(req,res)=>{
             _id:user.id,
             name:user.name,
             email:user.email,
+            status:user.status,
             token:generateToken(user._id)
         })
     }
@@ -79,6 +91,7 @@ const updatePass=asyncHandler(async(req,res)=>{
                 _id:user.id,
                 name:user.name,
                 email:user.email,
+                status:user.status,
                 token:generateToken(user._id)
             })
     }

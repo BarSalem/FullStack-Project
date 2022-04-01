@@ -116,4 +116,13 @@
     text-align: center;
     width: 100%;
   }
+
+  @media (max-width:1028px){
+    .Registerform {
+      margin:0 auto;
+    }
+    #RegisterForm {
+      margin:0 auto;
+    }
+  }
   

@@ -48,6 +48,6 @@
         display: inline-block;
     }
     .isToggled{
-        z-index: 1;
+        z-index: 150000;
     }
 }

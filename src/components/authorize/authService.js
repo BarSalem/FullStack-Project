@@ -29,6 +29,12 @@ const updatePass=async (userData)=>{
     return response.data;
 }
 
+const verifyUser =async (code) => {
+    return axios.get("/confirm/" + code).then((response) => {
+      return response.data;
+    });
+  };
+
 const logout= ()=>{
     localStorage.removeItem('user');
 }
@@ -37,7 +43,8 @@ const authService={
     register,
     logout,
     login,
-    updatePass
+    updatePass,
+    verifyUser
 }
 
 export default authService;

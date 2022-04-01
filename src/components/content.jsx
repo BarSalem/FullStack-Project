@@ -10,8 +10,11 @@ function Content(){
     if(!user){
       navigate('/login')
     }
+    if(user.status=='Pending'){
+      navigate('/unauthorized')
+    }
   },[user,navigate])
-
+  console.log(user);
     const [isShown, setState] = React.useState(false);
   const [setN,setNum]=React.useState("");
   var temp;
