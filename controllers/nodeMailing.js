@@ -5,8 +5,8 @@ const user = process.env.EMAIL_USER;
 const pass = process.env.PASS;
 
 const transport = nodemailer.createTransport({
+  service:'Gmail',
   host: 'smtp.gmail.com',
-  port: 25,
   secure: false,
   requireTLS: true,
   auth: {
@@ -16,7 +16,6 @@ const transport = nodemailer.createTransport({
 });
 
 module.exports.sendConfirmationEmail = (name, email, confirmationCode) => {
-    console.log("Check");
     transport.sendMail({
       from: user,
       to: email,
