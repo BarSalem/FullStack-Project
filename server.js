@@ -23,8 +23,11 @@ app.get('/confirm/:confirmationCode',(req, res, next) => {
       if (!user) {
         return res.status(404).send({ message: "User Not found." });
       }
-
-      user.status = "Active";
+      if(user.status=='Active'){
+        res.redirect('/')
+      }
+      else{
+        user.status = "Active";
       user.save((err) => {
         if (err) {
           res.status(500).send({ message: err });
@@ -34,6 +37,7 @@ app.get('/confirm/:confirmationCode',(req, res, next) => {
           res.redirect('/confirmed')
         }
       });
+      }
     })
     .catch((e) => console.log("error", e));
 });

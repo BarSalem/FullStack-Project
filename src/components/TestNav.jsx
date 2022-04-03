@@ -46,7 +46,6 @@ function NavBar(){
         navigate('/')
       }
 
-
     return (<div className="NavContainer">
     {screenWidth>1028 ? <>
         <div className="navRight">

@@ -31,6 +31,7 @@
             border-top: 1px solid rgb(255, 255, 255);
             text-align: center;
             background-color: #6bbe92;
+            z-index: 150000;
     }
     .toggleMenuBut{
         display: block;
@@ -46,8 +47,5 @@
     }
     .inlineLogout{
         display: inline-block;
-    }
-    .isToggled{
-        z-index: 150000;
     }
 }

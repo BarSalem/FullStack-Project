@@ -4,7 +4,10 @@ body {
     color: #fff;
     background-color: #374954;
     margin:0;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 a:hover{
   color:white;
 }
@@ -146,7 +149,7 @@ a{
   }
 
   .socGen:hover{
-    width: 70px;
+    width: 90px;
   }
   .socialLinks{
     position: fixed;
@@ -170,7 +173,6 @@ a{
   a:focus{
     color: white;
   }
-
   
 @media (max-width:1028px){
   h1{

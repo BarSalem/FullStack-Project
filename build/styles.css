@@ -5,6 +5,14 @@ body {
     background-color: #374954;
     margin:0;
   }
+
+footer{
+  clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+
 a:hover{
   color:white;
 }
@@ -170,7 +178,6 @@ a{
   a:focus{
     color: white;
   }
-
   
 @media (max-width:1028px){
   h1{
