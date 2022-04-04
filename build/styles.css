@@ -4,15 +4,10 @@ body {
     color: #fff;
     background-color: #374954;
     margin:0;
-  }
-
-footer{
-  clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 a:hover{
   color:white;
 }
@@ -128,7 +123,7 @@ a{
     float: right;
     transition: width .15s ease-in-out;
     overflow: hidden;
-    z-index: 100030;
+    z-index: 10;
     cursor: pointer;
     border:0;
   }
@@ -154,7 +149,7 @@ a{
   }
 
   .socGen:hover{
-    width: 70px;
+    width: 90px;
   }
   .socialLinks{
     position: fixed;
@@ -179,7 +174,7 @@ a{
     color: white;
   }
   
-@media (max-width:1028px){
+@media (max-width:815px){
   h1{
     font-size: 20px;
   }
@@ -190,4 +185,17 @@ a{
   .vid{
     width: 100%;
   }
+  /*.socGen{
+    display: inline-block;
+  }
+  .socialLinks{
+    margin:0 160px;
+    width: 100%;
+    display:block;
+    float: none;
+    }
+    .socGen:hover{
+      width: 60px;
+      height: 80px;
+    }*/
 }

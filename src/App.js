@@ -11,7 +11,7 @@ import Content from "./components/content";
 import Register from "./components/Register"
 import Footer from "./components/footer";
 import Profile from "./components/Account";
-import TestNav from "./components/TestNav";
+import TestNav from "./components/NewNav";
 import Welcome from './components/Welcome';
 import Unauthorized from "./components/unauthorized";
 
@@ -20,7 +20,6 @@ function App() {
     <>
       <Router >
         <TestNav />
-        <Socials />
         <Routes>
           <Route path='/' element={<Home />} ></Route>
           <Route path='/acc' element={<Profile />} ></Route>
@@ -32,6 +31,7 @@ function App() {
           <Route path="/confirmed" element={<Welcome />} ></Route>
           <Route path="/unauthorized" element={<Unauthorized />} ></Route>
         </Routes>
+        <Socials />
         <Footer />
       </Router>
       <ToastContainer />

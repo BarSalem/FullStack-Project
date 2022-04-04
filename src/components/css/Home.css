@@ -1,6 +1,6 @@
 .homeBody{
     width: 80%;
-    margin: 150px auto;
+    margin: 100px auto;
 }
 
 .homeInfo {
@@ -150,8 +150,11 @@
     resize:none;
   }
 
-  @media (max-width:1028px){
+  @media (max-width:768px){
     .homeInfo {
       margin-bottom: 60px;
+    }
+    .homeBody{
+      margin:0 auto;
     }
   }

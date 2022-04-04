@@ -53,18 +53,8 @@
     align-items: center;
   }
 
-  #root {
-    font: normal 14px/100% "Rubik", AndaleMono, monospace;
-    color: #fff;
-    background-color: #374954;
-    margin:0;
-    height: 100%;
-  }
-p:hover{
-  color:white;
-}
-
 a{
   text-decoration: none;
   vertical-align: middle;
+  padding-bottom: 5px;
 }

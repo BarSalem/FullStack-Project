@@ -42,7 +42,7 @@
     margin-left: 20px;
   }
 
-  @media screen and (max-width: 1028px){
+  @media screen and (max-width: 768px){
     .vid{
       width:100% !important;
       margin: 0px auto;

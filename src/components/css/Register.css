@@ -117,7 +117,7 @@
     width: 100%;
   }
 
-  @media (max-width:1028px){
+  @media (max-width:768px){
     .Registerform {
       margin:0 auto;
     }
