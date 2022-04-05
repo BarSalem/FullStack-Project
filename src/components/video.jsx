@@ -62,7 +62,7 @@ function Video(props){
     <div className="vidTitle">
     <div className="floatLeftTitle">
     <div className="subjectDiv">
-    {screenWidth>1028 ? <p id="lengthSize">length:   {duration}</p>:null}
+    {screenWidth>820 ? <p id="lengthSize">length:   {duration}</p>:null}
     </div>
     </div>
     <div className="subjectDiv">
@@ -71,7 +71,7 @@ function Video(props){
     </div>
     <div className="vidDetails">
     <p id="pContent">{props.content}</p>
-    {screenWidth>1028 ? null:<p id="lengthSize">length:   {duration}</p>}
+    {screenWidth>820 ? null:<p id="lengthSize">length:   {duration}</p>}
     </div>
     </div>
     </div>)

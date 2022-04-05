@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Videos from "./renderVideos"
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux'
@@ -6,15 +6,15 @@ import {useSelector} from 'react-redux'
 function Content(){
   const navigate=useNavigate();
   const {user}=useSelector((state)=> state.auth)
-  useEffect(()=>{
-    if(!user){
+  React.useEffect(()=>{
+    if (!user) {
       navigate('/login')
     }
-    if(user.status=='Pending'){
+    else{
+      if(user.status=='Pending'){
       navigate('/unauthorized')
-    }
+    }}
   },[user,navigate])
-  console.log(user);
     const [isShown, setState] = React.useState(false);
   const [setN,setNum]=React.useState("");
   var temp;

@@ -1,0 +1,48 @@
+.socGen{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    outline-offset: -1px;
+    text-align: center;
+    float: right;
+    transition: width .15s ease-in-out;
+    overflow: hidden;
+    z-index: 10;
+    cursor: pointer;
+    border:0;
+  }
+
+  #socialFB{
+    background-color: #2f55a4 ;
+  }
+
+  #socialTwit{
+    background-color: #1DA1F2;
+  }
+
+  #socialInst{
+    background-color: #bc2a8d;
+  }
+
+  #socialMail{
+    background-color: #FF3E30;
+  }
+
+  #socialSup{
+    background-color: #25D366;
+  }
+
+  .socGen:hover{
+    width: 90px;
+  }
+  .socialLinks{
+    position: fixed;
+    top: 300px;
+    right: 0;
+    }
+
+  .socColor{
+    color: white;
+  }

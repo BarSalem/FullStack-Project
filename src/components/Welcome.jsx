@@ -2,8 +2,7 @@ import React from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import {logout,reset} from "./authorize/authSlice";
 import {useDispatch} from 'react-redux';
-import './css/Navbar.css';
-import "./css/resNav.css";
+import "./css/FinalNav.css";
 
 function Welcome(){
     const dispatch = useDispatch()

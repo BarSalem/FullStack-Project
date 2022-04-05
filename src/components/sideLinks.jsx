@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, } from "@fortawesome/free-solid-svg-icons";
+import './css/sideLinks.css'
 
 function socialLinks(){
     return (<div className="socialLinks">

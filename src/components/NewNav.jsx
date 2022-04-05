@@ -3,7 +3,7 @@ import React,{useEffect} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import {useSelector} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightFromBracket, faBars, faSquareArrowUpRight,faUser} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket, faBars, faSquareArrowUpRight,faUser, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch} from 'react-redux';
 import {logout,reset} from "./authorize/authSlice";
 
@@ -47,7 +47,7 @@ function Navbar(){
         }
 
     return(<>
-    {screenWidth>820 ? <div className='NavbarContainer'>
+    {screenWidth>768 ? <div className='NavbarContainer'>
     <div className='NavBarRight'>
     <ul> 
     {user ? <li>
@@ -85,7 +85,9 @@ function Navbar(){
     </>}
     </div>:
     <><div className='toggleNavBarTop'>
-    <button onClick={toggleNav} className="toggleMenuBut"><FontAwesomeIcon icon={faBars} size={"3x"} /></button></div>
+    {toggleMenu ? <button onClick={toggleNav} className="toggleMenuBut"><FontAwesomeIcon icon={faXmark} size={"3x"} /></button>:
+    <button onClick={toggleNav} className="toggleMenuBut"><FontAwesomeIcon icon={faBars} size={"3x"} /></button>}
+    </div>
     {toggleMenu ? <div className="isToggled">
     <div className="NavItem"><Link to={'/'} className="linkP vertical-center"  onClick={handleOnClick}><p>Home</p></Link></div>
     <div className="NavItem"><Link to={'/about'} className="linkP vertical-center"  onClick={handleOnClick}><p>About</p></Link></div>
