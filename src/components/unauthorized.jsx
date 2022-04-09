@@ -1,8 +1,15 @@
 import React from "react";
-import {verifyUser} from "./authorize/authSlice";
-import { Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux'
 
 function Unauthorized(){
+  const navigate=useNavigate();
+  const {user}=useSelector((state)=> state.auth)
+  React.useEffect(()=>{
+    if (!user) {
+      navigate('/login')
+    }
+  },[user,navigate])
   return (
     <div>
     <center>

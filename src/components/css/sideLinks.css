@@ -3,12 +3,8 @@
     display: block;
     width: 60px;
     height: 60px;
-    margin: 0;
-    outline-offset: -1px;
-    text-align: center;
     float: right;
     transition: width .15s ease-in-out;
-    overflow: hidden;
     z-index: 10;
     cursor: pointer;
     border:0;
@@ -46,3 +42,10 @@
   .socColor{
     color: white;
   }
+#socialCollapse{
+  background-color: #696969;
+  color: white;
+  position: fixed;
+    top: 600px;
+    right: 0;
+}

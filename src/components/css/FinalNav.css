@@ -98,9 +98,10 @@
         height: 35px;
         background-color: #6bbe92;
     }
-    .isToggle ul{
-        flex-direction: column;
-        list-style-type: none;
+    .isToggle{
+
+        height: 150px;
+        transition: .5s;
     }
     .isToggle ul li{
         text-decoration: none;
@@ -122,12 +123,11 @@
         border-top: 1px solid rgb(255, 255, 255);
         text-align: center;
         background-color: #6bbe92;
-        z-index: 150000;
 }
-p{
+    p{
     text-align: center; 
     margin:auto;
     padding-top: 15px;
     padding-left: 15px;
-}
+    }
 }
