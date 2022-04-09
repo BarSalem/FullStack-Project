@@ -9,6 +9,11 @@ function Unauthorized(){
     if (!user) {
       navigate('/login')
     }
+    else{
+      if(user.status=='Active'){
+        navigate('/')
+      }
+    }
   },[user,navigate])
   return (
     <div>

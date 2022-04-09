@@ -9,6 +9,7 @@ function Welcome(){
       dispatch(logout())
       dispatch(reset())
       const styleLink={textDecoration:'none',color:'white',fontSize:'40px'}
+      
   return (
     <div>
     <center>
