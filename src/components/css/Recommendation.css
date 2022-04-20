@@ -30,6 +30,11 @@
     line-height: 100%;
 }
 
+.pRec::first-letter{
+    font-size: 35px;
+  font-weight: bold;
+}
+
 .pDiv{
     width: 80%;
     border-style: dotted;

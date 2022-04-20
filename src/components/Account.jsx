@@ -9,7 +9,7 @@ function Profile(){
     const navigate=useNavigate();
     const dispatch=useDispatch();
     const {user,isLoading,isError,isSuccess,message}=useSelector((state)=>state.auth);
-    /*useEffect(()=>{
+    useEffect(()=>{
       if(isError||!user){
         console.log(message);
         navigate('/login')
@@ -17,7 +17,7 @@ function Profile(){
       if(isSuccess||user){
         console.log("Good");
       }
-    },[user,isError,isSuccess,navigate])*/
+    },[user,isError,isSuccess,navigate])
     const [edit,setEdit]=React.useState(false)
     const email=user.email;
     const [formData,setFormData]=React.useState({

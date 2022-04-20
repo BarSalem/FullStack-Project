@@ -38,10 +38,12 @@ function Login(){
   }
 
   const onSubmit = (e) => {
+    const stayLoggedIn = e.target.checkBox.checked ? 1 : 0;
     e.preventDefault()
     const userData = {
       email,
       password,
+      stayLoggedIn
     }
 
     dispatch(login(userData))
@@ -63,6 +65,13 @@ function Login(){
     <div class="input-container ic2">
       <input id="firstname" class="inputLogin" type="password" name='password' onChange={onChange} value={password} placeholder="Password" required />
       <div class="cut"></div>
+    </div>
+    <div class="input-container ic2">
+      <div className="checkBoxDiv">
+      <input class="loginCheckBox" type="checkbox" name='checkBox'/>
+      <lable>Stay logged in</lable>
+      <div class="cut"></div>
+      </div>
     </div>
     <button type="submit" id="LoginSubmit">submit</button>
   </div>

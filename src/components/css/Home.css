@@ -9,7 +9,10 @@
     border-radius: 255px 50px 255px 50px/50px 225px 50px 255px;
     padding: 10px 50px;
   }
-
+.homeInfo p::first-letter{
+  font-size: 35px;
+  font-weight: bold;
+}
   #ContactForm {
     align-items: center;
     display: flex;

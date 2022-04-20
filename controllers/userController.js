@@ -58,16 +58,25 @@ const getMe=asyncHandler(async(req,res)=>{
 
 // route post /user/login
 const loginUser=asyncHandler(async(req,res)=>{
-    const {email,password}=req.body;
+    const {email,password,stayLoggedIn}=req.body;
+    console.log(stayLoggedIn);
     const user=await User.findOne({email});
     if(user && (await bcrypt.compare(password,user.password))){
-        res.json({
+        if(stayLoggedIn){
+            res.json({
+                _id:user.id,
+                name:user.name,
+                email:user.email,
+                status:user.status,
+                token:generateToken(user._id)
+            })
+        }
+        else{res.json({
             _id:user.id,
             name:user.name,
             email:user.email,
             status:user.status,
-            token:generateToken(user._id)
-        })
+        })}
     }
     else{
         res.status(400)

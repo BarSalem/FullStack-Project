@@ -95,12 +95,12 @@ function Navbar(){
     {user ?<div className="NavItem"><Link to={'/content'} className="linkP vertical-center"  onClick={handleOnClick}><p>Videos</p></Link></div>:null}
     {user ?  <>
     <div className='NavItem'><Link to={'/acc'} className="linkP vertical-center" onClick={handleOnClick} style={{ textDecoration: 'none' }}><p><FontAwesomeIcon icon={faUser}/> Profile</p></Link></div>
-    <div className='NavItem' onClick={onLogout}><Link to={'/'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p><FontAwesomeIcon icon={faArrowRightFromBracket}/> Log Out</p></Link></div>
+    <div className='NavItem registerBorder' onClick={onLogout}><Link to={'/'} className="linkP vertical-center"  onClick={handleOnClick} style={{ textDecoration: 'none' }}><p><FontAwesomeIcon icon={faArrowRightFromBracket}/> Log Out</p></Link></div>
     </> : <>
     <div className="NavItem">
     <Link to={'/login'} className="linkP vertical-center" onClick={handleOnClick}><p><FontAwesomeIcon icon={faArrowRightFromBracket}/>   Log In</p></Link>
     </div>
-    <div className="NavItem">
+    <div className="NavItem registerBorder">
     <Link to={'/register'} className="linkP vertical-center" onClick={handleOnClick}><p><FontAwesomeIcon icon={faSquareArrowUpRight} /> Register</p></Link>
     </div>
     </>}
